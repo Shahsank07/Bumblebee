@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Nutrition - HealthEd</title>
+  
+  <!-- Link TailwindCSS from CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Link Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  
+  <!-- Link Google Font for Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS for Animations -->
+  <style>
+    /* Keyframes for fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Keyframes for bounce animation */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Apply fade-in animation to sections */
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Apply bounce animation to cards on hover */
+    .hover-bounce:hover {
+      animation: bounce 0.5s ease-in-out;
+    }
+
+    /* Header animation */
+    header {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    /* Footer animation */
+    footer {
+      animation: fadeIn 1.2s ease-out;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">HealthEd</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a class="hover:underline flex items-center" href="index.html"><i class="fas fa-home mr-2"></i>Home</a></li>
+          <li><a class="hover:underline flex items-center" href="about.html"><i class="fas fa-info-circle mr-2"></i>About</a></li>
+          <li><a class="hover:underline flex items-center" href="programs.html"><i class="fas fa-cogs mr-2"></i>Programs</a></li>
+          <li><a class="hover:underline flex items-center" href="nutrition.html"><i class="fas fa-apple-alt mr-2"></i>Nutrition</a></li>
+          <li><a class="hover:underline flex items-center" href="mental-health.html"><i class="fas fa-brain mr-2"></i>Mental Health</a></li>
+          <li><a class="hover:underline flex items-center" href="physical-health.html"><i class="fas fa-dumbbell mr-2"></i>Physical Health</a></li>
+          <li><a class="hover:underline flex items-center" href="digital-tools.html"><i class="fas fa-mobile-alt mr-2"></i>Digital Tools</a></li>
+          <li><a class="hover:underline flex items-center" href="contact.html"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container mx-auto p-4">
+    <section class="bg-white p-6 rounded-lg shadow-md mb-6 fade-in">
+      <h2 class="text-3xl font-bold mb-4">Nutrition Education</h2>
+      <p class="mb-4">Learn about the importance of nutrition and how to maintain a balanced diet for a healthy lifestyle.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="balanced-diet.html" class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow hover-bounce">
+          <img alt="Balanced diet with fruits and vegetables" class="w-full rounded-lg mb-4" src="https://storage.googleapis.com/a1aa/image/zH7-bb6NaYnFuYmy0jbGRJrLgfFJOZQmIe-o2Gz_lFM.jpg"/>
+          <h3 class="text-xl font-bold mb-2">Balanced Diet</h3>
+          <p>Discover the key components of a balanced diet and how to incorporate them into your daily meals.</p>
+        </a>
+        <a href="meal-planning.html" class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow hover-bounce">
+          <img alt="Healthy meal prep" class="w-full rounded-lg mb-4" src="https://www.fitnessbypatty.com/wp-content/uploads/meal-prep-pic--e1515372580439.jpg"/>
+          <h3 class="text-xl font-bold mb-2">Meal Planning</h3>
+          <p>Learn how to plan and prepare healthy meals for the week to save time and stay on track.</p>
+        </a>
+        <a href="nutrition-labels.html" class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow hover-bounce">
+          <img alt="Nutrition facts label" class="w-full rounded-lg mb-4" src="https://tse3.mm.bing.net/th?id=OIP.2NpyAgraZyVuodfK7HIyLAHaE8&pid=Api&P=0&h=220"/>
+          <h3 class="text-xl font-bold mb-2">Reading Nutrition Labels</h3>
+          <p>Understand how to read and interpret nutrition labels to make informed food choices.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="bg-blue-600 text-white p-4 mt-6 fade-in">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

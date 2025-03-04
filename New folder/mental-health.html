@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthEd - Mental Health Awareness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles for animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Apply fade-in animation to elements */
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Apply bounce animation to cards on hover */
+    .card:hover {
+      animation: bounce 0.5s ease-in-out;
+    }
+
+    /* Custom hover effect for cards */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-600 p-4 shadow-md fade-in">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white text-lg font-bold">
+        HealthEd
+      </div>
+      <div class="space-x-6 flex items-center">
+        <a class="text-white hover:text-yellow-400 transition-colors flex items-center space-x-2" href="index.html">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a class="text-white hover:text-yellow-400 transition-colors flex items-center space-x-2" href="#">
+          <i class="fas fa-info-circle"></i>
+          <span>About</span>
+        </a>
+        <a class="text-white hover:text-yellow-400 transition-colors flex items-center space-x-2" href="#">
+          <i class="fas fa-cogs"></i>
+          <span>Programs</span>
+        </a>
+        <a class="text-white hover:text-yellow-400 transition-colors flex items-center space-x-2" href="#">
+          <i class="fas fa-phone-alt"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto mt-8 px-4">
+    <div class="bg-white p-8 rounded shadow-lg fade-in">
+      <h1 class="text-3xl font-bold mb-4 text-blue-600">Mental Health Awareness</h1>
+      <p class="mb-6 text-lg text-gray-700">
+        Explore resources and strategies to support mental well-being and emotional health.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Mindfulness & Meditation Card -->
+        <a href="mindfulness.html" class="card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://storage.googleapis.com/a1aa/image/Fz126vp6BhS5xKUQ9qKv3hOJ-IIxGyiTkj2ZYYr_52A.jpg" alt="Mindfulness illustration" class="w-full h-48 object-cover rounded mb-4">
+          <h2 class="font-bold text-xl text-gray-800">Mindfulness &amp; Meditation</h2>
+          <p class="text-sm text-gray-600">
+            Learn techniques to reduce stress and improve focus through mindfulness and meditation.
+          </p>
+        </a>
+
+        <!-- Counseling & Support Card -->
+        <a href="counseling.html" class="card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.TGeYO1NOdLxnpDso7VJKlwHaF7&pid=Api&P=0&h=220" alt="Counseling illustration" class="w-full h-48 object-cover rounded mb-4">
+          <h2 class="font-bold text-xl text-gray-800">Counseling &amp; Support</h2>
+          <p class="text-sm text-gray-600">
+            Find out how counseling and peer support can help you navigate mental health challenges.
+          </p>
+        </a>
+
+        <!-- Stress Management Card -->
+        <a href="stress-management.html" class="card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://storage.googleapis.com/a1aa/image/o_3lze_lzqiWpUzlNBvaqKnQqELKfFIXToQf4oxoLwQ.jpg" alt="Stress management illustration" class="w-full h-48 object-cover rounded mb-4">
+          <h2 class="font-bold text-xl text-gray-800">Stress Management</h2>
+          <p class="text-sm text-gray-600">
+            Discover effective strategies to manage stress and maintain emotional balance.
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 p-6 mt-8 shadow-md fade-in">
+    <div class="container mx-auto text-center text-white">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+      <div class="flex justify-center mt-4 space-x-6">
+        <a href="#" class="text-white hover:text-yellow-400 transition-colors"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white hover:text-yellow-400 transition-colors"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white hover:text-yellow-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-white hover:text-yellow-400 transition-colors"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

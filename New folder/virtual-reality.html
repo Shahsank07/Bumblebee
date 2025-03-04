@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore HealthEd's Virtual Reality tools for immersive health education."/>
+  <title>Virtual Reality - HealthEd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="https://storage.googleapis.com/a1aa/image/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="font-roboto bg-gray-100">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">HealthEd</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a class="hover:underline" href="index.html">Home</a></li>
+          <li><a class="hover:underline" href="about.html">About</a></li>
+          <li><a class="hover:underline" href="programs.html">Programs</a></li>
+          <li><a class="hover:underline" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="container mx-auto p-4">
+    <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h2 class="text-3xl font-bold mb-4">Virtual Reality</h2>
+      <p class="mb-4">Step into the future of health education with our virtual reality tools. Experience immersive simulations that bring complex health concepts to life.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <img alt="Virtual reality in education" class="w-full rounded-lg mb-4" src="https://storage.googleapis.com/a1aa/image/virtual-reality.jpg" loading="lazy"/>
+          <h3 class="text-xl font-bold mb-2">Features of Virtual Reality</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Immersive 3D environments</li>
+            <li>Hands-on training simulations</li>
+            <li>Real-world scenario practice</li>
+            <li>Collaborative VR experiences</li>
+          </ul>
+          <a href="#" class="text-blue-600 hover:underline">Explore Virtual Reality</a>
+          <a href="digital-tools.html" class="text-blue-600 hover:underline">Explore Digital Tools</a>
+
+        </div>
+        <div>
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe class="w-full rounded-lg" src="https://www.youtube.com/embed/HW6G2-FI4gI" title="Virtual Reality Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="mt-4">Watch a demo of our virtual reality tools in action.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
+</body>
+</html>

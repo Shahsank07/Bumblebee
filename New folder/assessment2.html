@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Assessment - HealthEd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;500&display=swap" rel="stylesheet"/>
+  <style>
+    .question-container {
+      background-color: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .question-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+    .question-text {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      color: #4b5563;
+    }
+    .answer-options li {
+      background-color: #e2e8f0;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .answer-options li:hover {
+      background-color: #cbd5e1;
+    }
+    .submit-button {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    .submit-button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">HealthEd - Assessment</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a class="hover:underline" href="index.html">Home</a></li>
+          <li><a class="hover:underline" href="about.html">About</a></li>
+          <li><a class="hover:underline" href="programs.html">Programs</a></li>
+          <li><a class="hover:underline" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Nutrition & Healthy Eating Assessment</h2>
+
+    <!-- Question 1 -->
+    <div class="question-container">
+      <div class="question-header">1. What is the primary source of energy for the human body?</div>
+      <ul class="answer-options">
+        <li>Vitamins</li>
+        <li>Carbohydrates</li>
+        <li>Proteins</li>
+        <li>Fats</li>
+      </ul>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-container">
+      <div class="question-header">2. Which of the following is a healthy food choice for a balanced diet?</div>
+      <ul class="answer-options">
+        <li>Fried chicken and french fries</li>
+        <li>Salad with leafy greens and grilled chicken</li>
+        <li>Pizza with extra cheese</li>
+        <li>Sugary cereal with milk</li>
+      </ul>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-container">
+      <div class="question-header">3. True or False: A person should only eat food from one food group for a healthy diet.</div>
+      <ul class="answer-options">
+        <li>True</li>
+        <li>False</li>
+      </ul>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-container">
+      <div class="question-header">4. What nutrient is most commonly found in fruits and vegetables?</div>
+      <ul class="answer-options">
+        <li>Carbohydrates</li>
+        <li>Protein</li>
+        <li>Vitamins and Minerals</li>
+        <li>Fats</li>
+      </ul>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-container">
+      <div class="question-header">5. Which of these is a healthy fat?</div>
+      <ul class="answer-options">
+        <li>Saturated fat from red meat</li>
+        <li>Trans fats from processed snacks</li>
+        <li>Unsaturated fat from olive oil</li>
+        <li>Butter from dairy products</li>
+      </ul>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-button">Submit Answers</button>
+
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Interactive Lessons - HealthEd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;500&display=swap" rel="stylesheet"/>
+  <style>
+    .lesson-container {
+      background-color: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .lesson-header {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    .lesson-description {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #4b5563;
+    }
+
+    .activity-card {
+      background-color: #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .activity-card:hover {
+      background-color: #cbd5e1;
+    }
+
+    .video-container {
+      margin-top: 30px;
+    }
+
+    .video-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .interactive-quiz {
+      background-color: #f3f4f6;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .interactive-quiz ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .interactive-quiz li {
+      background-color: #e2e8f0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .interactive-quiz li:hover {
+      background-color: #cbd5e1;
+    }
+
+    .quiz-submit {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .quiz-submit:hover {
+      background-color: #1d4ed8;
+    }
+
+    .result-message {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">HealthEd - Interactive Lessons</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a class="hover:underline" href="index.html">Home</a></li>
+          <li><a class="hover:underline" href="about.html">About</a></li>
+          <li><a class="hover:underline" href="programs.html">Programs</a></li>
+          <li><a class="hover:underline" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Interactive Lessons for Middle School (Grades 6-8)</h2>
+
+    <!-- Lesson 1: Nutrition Basics -->
+    <div class="lesson-container">
+      <div class="lesson-header">Lesson 1: Nutrition Basics</div>
+      <p class="lesson-description">Learn about the importance of a balanced diet, healthy eating habits, and the nutrients your body needs to stay energized and healthy.</p>
+
+      <!-- Interactive Activity 1 -->
+      <div class="activity-card">
+        <strong>Interactive Activity:</strong> Try creating your own balanced meal using the ingredients provided in the activity.
+      </div>
+
+      <div class="video-container">
+        <div class="video-title">Watch: How to Build a Healthy Plate</div>
+        <iframe class="w-full rounded-lg" height="315" src="https://www.youtube.com/embed/d1VxQ2Gb3wY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Lesson 2: Physical Activity and Health -->
+    <div class="lesson-container">
+      <div class="lesson-header">Lesson 2: Physical Activity and Health</div>
+      <p class="lesson-description">This lesson helps you understand the importance of regular physical activity for your overall health and fitness.</p>
+
+      <!-- Interactive Activity 2 -->
+      <div class="activity-card">
+        <strong>Interactive Activity:</strong> Create your weekly workout routine! What activities will you include to stay active?
+      </div>
+
+      <div class="video-container">
+        <div class="video-title">Watch: Fun Exercises You Can Do at Home</div>
+        <iframe class="w-full rounded-lg" height="315" src="https://www.youtube.com/embed/FkJ4f-YXHUk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Lesson 3: Mental Health and Well-Being -->
+    <div class="lesson-container">
+      <div class="lesson-header">Lesson 3: Mental Health and Well-Being</div>
+      <p class="lesson-description">Explore ways to take care of your mental health and the importance of managing stress and emotions, especially as a teenager.</p>
+
+      <!-- Interactive Activity 3 -->
+      <div class="activity-card">
+        <strong>Interactive Activity:</strong> Complete a journaling exercise to reflect on your feelings and thoughts. It helps you release stress!
+      </div>
+
+      <div class="video-container">
+        <div class="video-title">Watch: Tips for Managing Stress</div>
+        <iframe class="w-full rounded-lg" height="315" src="https://www.youtube.com/embed/vfWp1NjhP5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Interactive Quiz Section -->
+    <div class="interactive-quiz">
+      <h3 class="text-2xl font-bold mb-4">Quick Quiz: What You’ve Learned So Far</h3>
+      <ul id="quiz">
+        <li>
+          <label>What are the three main nutrients that your body needs daily? (Hint: Protein, Carbs, Fats)</label>
+          <input type="text" id="q1" class="p-2 border rounded-lg w-full mt-2" placeholder="Your answer here...">
+        </li>
+        <li>
+          <label>How many hours should you sleep every night to stay healthy?</label>
+          <input type="text" id="q2" class="p-2 border rounded-lg w-full mt-2" placeholder="Your answer here...">
+        </li>
+        <li>
+          <label>What’s one thing you can do to manage stress effectively?</label>
+          <input type="text" id="q3" class="p-2 border rounded-lg w-full mt-2" placeholder="Your answer here...">
+        </li>
+      </ul>
+      <button class="quiz-submit" onclick="checkAnswers()">Submit Answers</button>
+      <div id="result" class="result-message"></div>
+    </div>
+
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to check quiz answers
+    function checkAnswers() {
+      let score = 0;
+
+      // Get user answers
+      const q1Answer = document.getElementById('q1').value.trim().toLowerCase();
+      const q2Answer = document.getElementById('q2').value.trim().toLowerCase();
+      const q3Answer = document.getElementById('q3').value.trim().toLowerCase();
+
+      // Correct answers
+      const correctAnswers = {
+        q1: ['protein, carbs, fats', 'protein carbs fats', 'protein and carbs and fats'],
+        q2: ['8', 'eight'],
+        q3: ['exercise', 'meditation', 'journaling']
+      };
+
+      // Check answers
+      if (correctAnswers.q1.includes(q1Answer)) score++;
+      if (correctAnswers.q2.includes(q2Answer)) score++;
+      if (correctAnswers.q3.some(answer => q3Answer.includes(answer))) score++;
+
+      // Display result
+      let resultMessage = `You got ${score} out of 3 correct!`;
+      if (score === 3) {
+        resultMessage += " Excellent work!";
+      } else if (score === 2) {
+        resultMessage += " Almost there!";
+      } else {
+        resultMessage += " Keep trying!";
+      }
+
+      document.getElementById('result').textContent = resultMessage;
+    }
+  </script>
+  
+</body>
+</html>

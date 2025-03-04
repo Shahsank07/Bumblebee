@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Interactive Healthcare Quiz - HealthEd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;500&display=swap" rel="stylesheet"/>
+  <style>
+    .quiz-container {
+      background-color: #f3f4f6;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .quiz-header {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    .quiz-question {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .quiz-options {
+      margin-bottom: 15px;
+    }
+
+    .quiz-option {
+      background-color: #e2e8f0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .quiz-option:hover {
+      background-color: #cbd5e1;
+    }
+
+    .submit-btn {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .result-message {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .feedback {
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">HealthEd - Healthcare Quiz</h1>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Interactive Healthcare Quiz (Grades 9-12)</h2>
+
+    <div class="quiz-container">
+      <div class="quiz-header">Test Your Knowledge on Healthcare!</div>
+      
+      <!-- Question 1: Human Body System -->
+      <div class="quiz-question">1. Which organ is responsible for pumping blood throughout the body?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="selectAnswer('q1', 'heart')">A) Heart</div>
+        <div class="quiz-option" onclick="selectAnswer('q1', 'lungs')">B) Lungs</div>
+        <div class="quiz-option" onclick="selectAnswer('q1', 'kidneys')">C) Kidneys</div>
+        <div class="quiz-option" onclick="selectAnswer('q1', 'liver')">D) Liver</div>
+      </div>
+
+      <!-- Question 2: Mental Health -->
+      <div class="quiz-question">2. Which of the following is a common symptom of anxiety disorder?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="selectAnswer('q2', 'shortness of breath')">A) Shortness of breath</div>
+        <div class="quiz-option" onclick="selectAnswer('q2', 'frequent headaches')">B) Frequent headaches</div>
+        <div class="quiz-option" onclick="selectAnswer('q2', 'euphoria')">C) Euphoria</div>
+        <div class="quiz-option" onclick="selectAnswer('q2', 'insomnia')">D) Insomnia</div>
+      </div>
+
+      <!-- Question 3: Nutrition -->
+      <div class="quiz-question">3. Which nutrient is primarily responsible for building and repairing tissues in the body?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="selectAnswer('q3', 'protein')">A) Protein</div>
+        <div class="quiz-option" onclick="selectAnswer('q3', 'carbohydrates')">B) Carbohydrates</div>
+        <div class="quiz-option" onclick="selectAnswer('q3', 'fats')">C) Fats</div>
+        <div class="quiz-option" onclick="selectAnswer('q3', 'vitamins')">D) Vitamins</div>
+      </div>
+
+      <!-- Question 4: Public Health -->
+      <div class="quiz-question">4. What is the primary goal of public health?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="selectAnswer('q4', 'preventing disease')">A) Preventing disease</div>
+        <div class="quiz-option" onclick="selectAnswer('q4', 'treating patients')">B) Treating patients</div>
+        <div class="quiz-option" onclick="selectAnswer('q4', 'curing diseases')">C) Curing diseases</div>
+        <div class="quiz-option" onclick="selectAnswer('q4', 'reducing medical costs')">D) Reducing medical costs</div>
+      </div>
+
+      <button class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+      <div id="result" class="result-message"></div>
+    </div>
+
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let selectedAnswers = {
+      q1: null,
+      q2: null,
+      q3: null,
+      q4: null
+    };
+
+    function selectAnswer(question, answer) {
+      selectedAnswers[question] = answer;
+      document.querySelectorAll(`#${question} .quiz-option`).forEach(option => {
+        option.style.backgroundColor = "#e2e8f0"; // Reset all options
+      });
+      document.querySelector(`#${question} .quiz-option:contains('${answer}')`).style.backgroundColor = "#cbd5e1"; // Highlight selected option
+    }
+
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: 'heart',
+        q2: 'shortness of breath',
+        q3: 'protein',
+        q4: 'preventing disease'
+      };
+
+      let score = 0;
+
+      // Check each answer
+      for (let question in selectedAnswers) {
+        if (selectedAnswers[question] === correctAnswers[question]) {
+          score++;
+        }
+      }
+
+      // Display the result message
+      let resultMessage = `You got ${score} out of 4 correct!`;
+      if (score === 4) {
+        resultMessage += " Excellent work!";
+      } else if (score >= 2) {
+        resultMessage += " Good job, but there's room for improvement!";
+      } else {
+        resultMessage += " Keep studying, you can do better!";
+      }
+
+      document.getElementById('result').textContent = resultMessage;
+    }
+  </script>
+  
+</body>
+</html>

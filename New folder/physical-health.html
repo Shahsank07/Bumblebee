@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical Health & Fitness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    /* Custom styles for animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Apply fade-in animation to elements */
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Apply bounce animation to cards on hover */
+    .card:hover {
+      animation: bounce 0.5s ease-in-out;
+    }
+
+    /* Custom hover effect for cards */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hide all sections by default */
+    .page-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    /* Show the active section */
+    .page-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-7xl mx-auto p-6">
+    <!-- Navigation Links with Icons -->
+    <div class="flex space-x-6 mb-6 fade-in">
+      <button id="home-btn" onclick="showSection('home')" class="text-blue-500 hover:underline flex items-center space-x-2">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </button>
+      <button id="exercise-btn" onclick="showSection('exercise')" class="text-blue-500 hover:underline flex items-center space-x-2">
+        <i class="fas fa-dumbbell"></i> <span>Exercise Routines</span>
+      </button>
+      <button id="outdoor-btn" onclick="showSection('outdoor')" class="text-blue-500 hover:underline flex items-center space-x-2">
+        <i class="fas fa-tree"></i> <span>Outdoor Activities</span>
+      </button>
+      <button id="habits-btn" onclick="showSection('habits')" class="text-blue-500 hover:underline flex items-center space-x-2">
+        <i class="fas fa-heart"></i> <span>Healthy Habits</span>
+      </button>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="page-section active fade-in">
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Physical Health & Fitness</h1>
+        <p class="mb-6">
+          Stay active and healthy with our physical health resources and fitness tips.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Exercise Routines Card -->
+          <div class="card bg-gray-100 p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <img alt="Icon representing exercise routines" class="mr-2" height="24" src="https://storage.googleapis.com/a1aa/image/qEYE9b74P4Xh5KTShVmHAZHIv8Q-dd4xBx-gMTUwFxo.jpg" width="24"/>
+              <span class="text-sm text-gray-600">Exercise routines</span>
+            </div>
+            <h2 class="text-xl font-bold mb-2">Exercise Routines</h2>
+            <p>
+              Explore workout plans to improve strength, flexibility, and cardiovascular health.
+            </p>
+            <button onclick="showSection('exercise')" class="mt-4 text-blue-500 hover:underline">Learn More →</button>
+          </div>
+          <!-- Outdoor Activities Card -->
+          <div class="card bg-gray-100 p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <img alt="Icon representing outdoor activities" class="mr-2" height="24" src="https://storage.googleapis.com/a1aa/image/ODa9_4Fze7YwSXRruSsYwer3GC7ETx0Ydvm6QLxMSQ4.jpg" width="24"/>
+              <span class="text-sm text-gray-600">Outdoor activities</span>
+            </div>
+            <h2 class="text-xl font-bold mb-2">Outdoor Activities</h2>
+            <p>
+              Discover fun outdoor activities to stay active and enjoy nature.
+            </p>
+            <button onclick="showSection('outdoor')" class="mt-4 text-blue-500 hover:underline">Learn More →</button>
+          </div>
+          <!-- Healthy Habits Card -->
+          <div class="card bg-gray-100 p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <img alt="Icon representing healthy lifestyle habits" class="mr-2" height="24" src="https://storage.googleapis.com/a1aa/image/hWKRh9Ere8I3ONP3SQraTLr06cUxpZBzWJkTlD8BsNE.jpg" width="24"/>
+              <span class="text-sm text-gray-600">Healthy lifestyle habits</span>
+            </div>
+            <h2 class="text-xl font-bold mb-2">Healthy Habits</h2>
+            <p>
+              Learn how to build and maintain healthy lifestyle habits for long-term well-being.
+            </p>
+            <button onclick="showSection('habits')" class="mt-4 text-blue-500 hover:underline">Learn More →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise Routines Section -->
+    <div id="exercise" class="page-section">
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6">Exercise Routines</h1>
+        <p class="mb-6 text-gray-700">
+          Regular exercise is essential for maintaining physical health. Whether you're a beginner or an experienced fitness enthusiast, these routines will help you stay active and healthy.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="https://images.unsplash.com/photo-1596357395217-80de13130e92?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Exercise Routines" class="rounded-lg shadow-sm">
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4">Benefits of Exercise</h2>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Improves cardiovascular health</li>
+              <li>Builds muscle strength and endurance</li>
+              <li>Enhances flexibility and balance</li>
+              <li>Boosts mental health and reduces stress</li>
+            </ul>
+            <h2 class="text-xl font-bold mt-6 mb-4">Sample Routine</h2>
+            <p class="text-gray-700">
+              Start with a 10-minute warm-up, followed by 30 minutes of cardio (e.g., running, cycling), and finish with 20 minutes of strength training (e.g., squats, push-ups).
+            </p>
+          </div>
+        </div>
+        <button onclick="showSection('home')" class="mt-6 text-blue-500 hover:underline">← Back to Home</button>
+      </div>
+    </div>
+
+    <!-- Outdoor Activities Section -->
+    <div id="outdoor" class="page-section">
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6">Outdoor Activities</h1>
+        <p class="mb-6 text-gray-700">
+          Spending time outdoors is a great way to stay active and connect with nature. Explore these fun activities to make the most of your time outside.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Outdoor Activities" class="rounded-lg shadow-sm">
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4">Popular Outdoor Activities</h2>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Hiking and trekking</li>
+              <li>Cycling and mountain biking</li>
+              <li>Kayaking and canoeing</li>
+              <li>Rock climbing</li>
+            </ul>
+            <h2 class="text-xl font-bold mt-6 mb-4">Tips for Outdoor Adventures</h2>
+            <p class="text-gray-700">
+              Always carry water, wear appropriate clothing, and check the weather forecast before heading out. Don't forget to respect nature and leave no trace.
+            </p>
+          </div>
+        </div>
+        <button onclick="showSection('home')" class="mt-6 text-blue-500 hover:underline">← Back to Home</button>
+      </div>
+    </div>
+
+    <!-- Healthy Habits Section -->
+    <div id="habits" class="page-section">
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6">Healthy Habits</h1>
+        <p class="mb-6 text-gray-700">
+          Building and maintaining healthy habits is key to long-term well-being. Here are some tips to help you live a healthier and happier life.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Healthy Habits" class="rounded-lg shadow-sm">
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4">Key Healthy Habits</h2>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Eat a balanced diet rich in fruits and vegetables</li>
+              <li>Stay hydrated by drinking plenty of water</li>
+              <li>Get 7-8 hours of sleep each night</li>
+              <li>Practice mindfulness and stress management</li>
+            </ul>
+            <h2 class="text-xl font-bold mt-6 mb-4">Daily Routine Tips</h2>
+            <p class="text-gray-700">
+              Start your day with a healthy breakfast, take short breaks to stretch during work, and end your day with a relaxing activity like reading or meditation.
+            </p>
+          </div>
+        </div>
+        <button onclick="showSection('home')" class="mt-6 text-blue-500 hover:underline">← Back to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the selected section and hide others
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      // Show the selected section
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+</body>
+</html>

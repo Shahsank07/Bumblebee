@@ -1,0 +1,218 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #1d4ed8; /* Tailwind Blue */
+    color: white;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #fbbf24; /* Tailwind Yellow */
+  }
+  
+  /* Main Content Section */
+  main {
+    padding: 30px 15px;
+  }
+  
+  /* Section Styles */
+  section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+  }
+  
+  section:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Program Tile Styles */
+  section h2 {
+    font-size: 2rem;
+    color: #1d4ed8;
+    margin-bottom: 15px;
+  }
+  
+  section p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .grid a {
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grid a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .grid a img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .grid a h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  
+  .grid a p {
+    font-size: 1rem;
+    color: #888;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: #1d4ed8;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #2563eb; /* Tailwind Blue-600 */
+    transform: scale(1.05);
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(29, 78, 216, 0.6);
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #1d4ed8;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #fbbf24;
+  }
+  
+  footer .social-icons {
+    margin-top: 10px;
+  }
+  
+  footer .social-icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media screen and (max-width: 768px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .grid a {
+      padding: 15px;
+    }
+  
+    footer p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    header h1 {
+      font-size: 1.25rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    footer p {
+      font-size: 0.8rem;
+    }
+  
+    footer .social-icons a {
+      font-size: 1.2rem;
+    }
+  }
+  .image-overlay a:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .bg-gray-50:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Interactive Lessons - HealthEd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;500&display=swap" rel="stylesheet"/>
+  <style>
+    .lesson-container {
+      background-color: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .lesson-header {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+    .lesson-subheader {
+      font-size: 1.25rem;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .lesson-text {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #4b5563;
+    }
+    .lesson-video {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .interactive-quiz {
+      margin-top: 20px;
+    }
+    .quiz-question {
+      font-weight: bold;
+    }
+    .quiz-options li {
+      background-color: #e2e8f0;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .quiz-options li:hover {
+      background-color: #cbd5e1;
+    }
+    .quiz-submit {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    .quiz-submit:hover {
+      background-color: #1d4ed8;
+    }
+    .result-message {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Interactive Lessons - HealthEd</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a class="hover:underline" href="index.html">Home</a></li>
+          <li><a class="hover:underline" href="about.html">About</a></li>
+          <li><a class="hover:underline" href="programs.html">Programs</a></li>
+          <li><a class="hover:underline" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Interactive Lesson: Nutrition & Healthy Eating Habits</h2>
+
+    <!-- Lesson 1: Video Introduction -->
+    <div class="lesson-container">
+      <div class="lesson-header">Understanding Nutrition: An Introduction</div>
+      <div class="lesson-text">
+        In this lesson, we will learn about the importance of balanced nutrition and the role it plays in maintaining a healthy lifestyle. Eating the right foods can help you feel more energized, maintain a healthy weight, and reduce the risk of chronic diseases.
+      </div>
+      <div class="lesson-subheader">Watch the Video</div>
+      <iframe class="lesson-video" src="https://www.youtube.com/embed/4Sj3-X9hL6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Lesson 2: The Food Pyramid -->
+    <div class="lesson-container">
+      <div class="lesson-header">The Food Pyramid: Building a Healthy Plate</div>
+      <div class="lesson-text">
+        The Food Pyramid is a guide to help you understand the different food groups and the proportions in which they should be included in your diet. A balanced diet includes foods from all the groups in the right amounts.
+      </div>
+      <div class="lesson-subheader">Key Food Groups</div>
+      <ul class="lesson-text">
+        <li><strong>Grains</strong> - Provides energy through carbohydrates.</li>
+        <li><strong>Fruits and Vegetables</strong> - Rich in vitamins, minerals, and fiber.</li>
+        <li><strong>Proteins</strong> - Builds and repairs body tissues.</li>
+        <li><strong>Dairy</strong> - Provides calcium for strong bones.</li>
+        <li><strong>Fats</strong> - Necessary for brain health and energy.</li>
+      </ul>
+    </div>
+
+    <!-- Interactive Quiz: Nutrition Knowledge -->
+    <div class="lesson-container interactive-quiz">
+      <div class="lesson-header">Quiz: Test Your Nutrition Knowledge</div>
+      <div class="quiz-question">1. Which of the following is the healthiest source of protein?</div>
+      <ul class="quiz-options" id="q1">
+        <li data-answer="wrong">Red Meat</li>
+        <li data-answer="correct">Chicken</li>
+        <li data-answer="wrong">Beans and Lentils</li>
+        <li data-answer="wrong">Processed Foods</li>
+      </ul>
+      <div class="quiz-question">2. What nutrient is most commonly found in fruits and vegetables?</div>
+      <ul class="quiz-options" id="q2">
+        <li data-answer="wrong">Carbohydrates</li>
+        <li data-answer="wrong">Protein</li>
+        <li data-answer="correct">Vitamins and Minerals</li>
+        <li data-answer="wrong">Fats</li>
+      </ul>
+      <div class="quiz-question">3. True or False: A balanced diet includes a variety of foods from all the food groups.</div>
+      <ul class="quiz-options" id="q3">
+        <li data-answer="correct">True</li>
+        <li data-answer="wrong">False</li>
+      </ul>
+      <button class="quiz-submit" onclick="checkAnswers()">Submit Answers</button>
+      <div id="result" class="result-message"></div>
+    </div>
+
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to check quiz answers
+    function checkAnswers() {
+      let score = 0;
+
+      // Check first question
+      const q1Answer = document.querySelector('#q1 li.selected');
+      if (q1Answer && q1Answer.getAttribute('data-answer') === 'correct') {
+        score++;
+      }
+
+      // Check second question
+      const q2Answer = document.querySelector('#q2 li.selected');
+      if (q2Answer && q2Answer.getAttribute('data-answer') === 'correct') {
+        score++;
+      }
+
+      // Check third question
+      const q3Answer = document.querySelector('#q3 li.selected');
+      if (q3Answer && q3Answer.getAttribute('data-answer') === 'correct') {
+        score++;
+      }
+
+      // Display result
+      const resultDiv = document.getElementById('result');
+      if (score === 3) {
+        resultDiv.textContent = 'Congratulations! You got all answers correct!';
+        resultDiv.style.color = '#34d399'; // Green color
+      } else {
+        resultDiv.textContent = `You got ${score} out of 3 correct. Try again!`;
+        resultDiv.style.color = '#f87171'; // Red color
+      }
+    }
+
+    // Event listener for selecting quiz options
+    const quizOptions = document.querySelectorAll('.quiz-options li');
+    quizOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        // Deselect all options
+        const siblings = option.parentNode.querySelectorAll('li');
+        siblings.forEach(sibling => sibling.classList.remove('selected'));
+        // Select the clicked option
+        option.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Interactive Healthcare Quiz - HealthEd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;500&display=swap" rel="stylesheet"/>
+  <style>
+    .quiz-container {
+      background-color: #f3f4f6;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .quiz-header {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    .quiz-question {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .quiz-options {
+      margin-bottom: 15px;
+    }
+
+    .quiz-option {
+      background-color: #e2e8f0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .quiz-option:hover {
+      background-color: #cbd5e1;
+    }
+
+    .quiz-option.selected {
+      background-color: #a5b4fc;
+    }
+
+    .submit-btn {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .result-message {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .incorrect-answer {
+      background-color: #f8d7da;
+      color: #721c24;
+      font-weight: bold;
+    }
+
+    .correct-answer {
+      background-color: #d4edda;
+      color: #155724;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">HealthEd - Kids Healthcare Quiz</h1>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Interactive Healthcare Quiz (Grades K-5)</h2>
+
+    <div class="quiz-container">
+      <div class="quiz-header">Test Your Knowledge on Healthcare!</div>
+      
+      <!-- Question 1: Healthy Eating -->
+      <div class="quiz-question" id="q1">1. Which of these is healthy to eat?</div>
+      <div class="quiz-options" id="q1-options">
+        <div class="quiz-option" data-answer="apple" onclick="selectAnswer('q1', 'apple')">A) Apple</div>
+        <div class="quiz-option" data-answer="cookie" onclick="selectAnswer('q1', 'cookie')">B) Cookie</div>
+        <div class="quiz-option" data-answer="chips" onclick="selectAnswer('q1', 'chips')">C) Chips</div>
+        <div class="quiz-option" data-answer="soda" onclick="selectAnswer('q1', 'soda')">D) Soda</div>
+      </div>
+
+      <!-- Question 2: Healthy Habits -->
+      <div class="quiz-question" id="q2">2. How many hours should kids sleep each night?</div>
+      <div class="quiz-options" id="q2-options">
+        <div class="quiz-option" data-answer="8 hours" onclick="selectAnswer('q2', '8 hours')">A) 8 hours</div>
+        <div class="quiz-option" data-answer="2 hours" onclick="selectAnswer('q2', '2 hours')">B) 2 hours</div>
+        <div class="quiz-option" data-answer="6 hours" onclick="selectAnswer('q2', '6 hours')">C) 6 hours</div>
+        <div class="quiz-option" data-answer="10 hours" onclick="selectAnswer('q2', '10 hours')">D) 10 hours</div>
+      </div>
+
+      <!-- Question 3: Exercise -->
+      <div class="quiz-question" id="q3">3. What is a fun way to stay active and healthy?</div>
+      <div class="quiz-options" id="q3-options">
+        <div class="quiz-option" data-answer="playing outside" onclick="selectAnswer('q3', 'playing outside')">A) Playing outside</div>
+        <div class="quiz-option" data-answer="watching TV" onclick="selectAnswer('q3', 'watching TV')">B) Watching TV</div>
+        <div class="quiz-option" data-answer="playing video games" onclick="selectAnswer('q3', 'playing video games')">C) Playing video games</div>
+        <div class="quiz-option" data-answer="eating snacks" onclick="selectAnswer('q3', 'eating snacks')">D) Eating snacks</div>
+      </div>
+
+      <!-- Question 4: Hydration -->
+      <div class="quiz-question" id="q4">4. What is the best drink for your body?</div>
+      <div class="quiz-options" id="q4-options">
+        <div class="quiz-option" data-answer="water" onclick="selectAnswer('q4', 'water')">A) Water</div>
+        <div class="quiz-option" data-answer="juice" onclick="selectAnswer('q4', 'juice')">B) Juice</div>
+        <div class="quiz-option" data-answer="soda" onclick="selectAnswer('q4', 'soda')">C) Soda</div>
+        <div class="quiz-option" data-answer="milk" onclick="selectAnswer('q4', 'milk')">D) Milk</div>
+      </div>
+
+      <button class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+      <div id="result" class="result-message"></div>
+      <div id="incorrect-answers" class="feedback"></div>
+    </div>
+
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+      <p>© 2023 HealthEd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let selectedAnswers = {
+      q1: null,
+      q2: null,
+      q3: null,
+      q4: null
+    };
+
+    const correctAnswers = {
+      q1: 'apple',
+      q2: '10 hours',
+      q3: 'playing outside',
+      q4: 'water'
+    };
+
+    function selectAnswer(question, answer) {
+      selectedAnswers[question] = answer;
+      document.querySelectorAll(`#${question}-options .quiz-option`).forEach(option => {
+        option.classList.remove("selected"); // Reset all options
+      });
+      const selectedOption = document.querySelector(`#${question}-options .quiz-option[data-answer="${answer}"]`);
+      selectedOption.classList.add("selected"); // Highlight selected option
+    }
+
+    function checkAnswers() {
+      let score = 0;
+      let incorrectAnswersMessage = "Incorrect Answers:<br>";
+
+      // Check each answer
+      for (let question in selectedAnswers) {
+        if (selectedAnswers[question] === correctAnswers[question]) {
+          score++;
+          // Highlight the correct answer
+          const correctOption = document.querySelector(`#${question}-options .quiz-option[data-answer="${correctAnswers[question]}"]`);
+          if (correctOption) {
+            correctOption.classList.add("correct-answer");
+          }
+        } else {
+          incorrectAnswersMessage += `<strong>${question.charAt(0).toUpperCase() + question.slice(1)}:</strong> Correct Answer: ${correctAnswers[question]}<br>`;
+          // Highlight the incorrect option
+          const incorrectOption = document.querySelector(`#${question}-options .quiz-option[data-answer="${selectedAnswers[question]}"]`);
+          if (incorrectOption) {
+            incorrectOption.classList.add("incorrect-answer");
+          }
+        }
+      }
+
+      // Display the result message
+      let resultMessage = `You got ${score} out of 4 correct!`;
+      if (score === 4) {
+        resultMessage += " Great job!";
+      } else if (score >= 2) {
+        resultMessage += " Nice work!";
+      } else {
+        resultMessage += " Try again to learn more!";
+      }
+
+      document.getElementById('result').textContent = resultMessage;
+      document.getElementById('incorrect-answers').innerHTML = incorrectAnswersMessage;
+    }
+  </script>
+  
+</body>
+</html>

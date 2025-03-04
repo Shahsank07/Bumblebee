@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrated Health Education Curriculum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50">
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header Section -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Integrated Health Education Curriculum</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our comprehensive curriculum seamlessly integrates health and wellness topics into existing school subjects.
+        </p>
+      </div>
+
+      <!-- Grade Level Tabs -->
+      <div class="mb-8">
+        <div class="border-b border-gray-200">
+          <nav class="flex -mb-px overflow-x-auto">
+            <button id="tab-elementary" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm mr-8 border-green-500 text-green-600" onclick="switchTab('elementary')">
+              Elementary School (K-5)
+            </button>
+            <button id="tab-middle" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm mr-8 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" onclick="switchTab('middle')">
+              Middle School (6-8)
+            </button>
+            <button id="tab-high" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" onclick="switchTab('high')">
+              High School (9-12)
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Elementary School Content -->
+      <div id="content-elementary" class="tab-content">
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Elementary School Health Integration</h2>
+          <p class="text-gray-600 mb-6">
+            Our elementary curriculum focuses on building foundational health knowledge through engaging, age-appropriate activities integrated into daily learning.
+          </p>
+          
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Example Lessons</h3>
+          <div class="border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center mb-4">
+              <div class="p-2 bg-green-100 rounded-md text-green-600 mr-4">
+                <i data-lucide="apple" class="h-6 w-6"></i>
+              </div>
+              <h4 class="text-lg font-medium text-gray-900">The Rainbow Plate (Grades K-2)</h4>
+            </div>
+            <p class="text-gray-600">Students learn about food groups and nutrition while creating "rainbow plates."</p>
+          </div>
+          
+          <div class="border border-gray-200 rounded-lg p-6 mt-6">
+            <div class="flex items-center mb-4">
+              <div class="p-2 bg-blue-100 rounded-md text-blue-600 mr-4">
+                <i data-lucide="brain" class="h-6 w-6"></i>
+              </div>
+              <h4 class="text-lg font-medium text-gray-900">Feelings Detective (Grades 3-5)</h4>
+            </div>
+            <p class="text-gray-600">Students learn to identify emotions through storytelling and role-playing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle School Content -->
+      <div id="content-middle" class="tab-content hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Middle School Health Integration</h2>
+          <p class="text-gray-600 mb-6">
+            Our middle school curriculum builds on foundational knowledge and introduces more complex health topics.
+          </p>
+          <!-- Add your middle school content here -->
+        </div>
+      </div>
+
+      <!-- High School Content -->
+      <div id="content-high" class="tab-content hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">High School Health Integration</h2>
+          <p class="text-gray-600 mb-6">
+            Our high school curriculum prepares students for lifelong health and wellness with advanced topics and practical applications.
+          </p>
+          <!-- Add your high school content here -->
+        </div>
+      </div>
+
+      <!-- Digital Tools Section -->
+      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+        <!-- Interactive Lessons -->
+        <div class="flex items-start bg-white p-4 rounded-lg shadow-md w-full md:w-1/3">
+            <div class="w-4 h-4 bg-blue-500 rounded-full mt-1 mr-2"></div>
+            <div>
+                <h2 class="font-bold text-gray-800">Interactive Lessons</h2>
+                <p class="text-gray-600">Digital lessons with multimedia content, interactive activities, and real-time assessments.</p>
+            </div>
+        </div>
+    
+       
+        <!-- Collaboration Platforms -->
+        <div class="flex items-start bg-white p-4 rounded-lg shadow-md w-full md:w-1/3">
+            <div class="w-4 h-4 bg-yellow-500 rounded-full mt-1 mr-2"></div>
+            <div>
+                <h2 class="font-bold text-gray-800">Collaboration Platforms</h2>
+                <p class="text-gray-600">Digital spaces for students to collaborate on health projects and share learning experiences.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function switchTab(tab) {
+      // Hide all tab content
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+      // Remove active class from all tabs
+      document.querySelectorAll('nav button').forEach(button => {
+        button.classList.remove('border-green-500', 'text-green-600');
+        button.classList.add('border-transparent', 'text-gray-500');
+      });
+      // Show the selected tab content
+      document.getElementById(content-{tab}).classList.remove('hidden');
+      // Add active class to the selected tab
+      document.getElementById(tab-{tab}).classList.add('border-green-500', 'text-green-600');
+      document.getElementById(tab-{tab}).classList.remove('border-transparent', 'text-gray-500');
+    }
+
+    // Initialize the first tab as active
+    switchTab('elementary');
+  </script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
